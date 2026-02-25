@@ -1,0 +1,45 @@
+-- 10. Find last day of the month.
+ select lasr_day from (order_date) from orders;
+
+-- 11. Get first day of the year.
+select trunc (order_date , 'yyyy') as first_day_year from orders;
+
+-- 12. Format date as 'DD-MM-YYYY'.
+select to_char(order_date, 'DD-MM-YYY') AS formated_date
+from orders;
+
+-- 13. Convert string to date.
+slect to_date('25-02-2026' 'dd-mm-yy') as formatted_date
+from orders;
+
+-- 14. Convert date to string.
+select to_char('dd-mm-yy' '25-02-2026') from orders;
+
+-- 15. Find week number of the year.
+select to_char (sysdate_ 'iw') as week_number
+from orders;
+
+-- 16. Find day name from date.
+select to_char (data_column , 'day') as day_name
+from table_name;
+
+-- 17. Find quarter of the year
+select to_char (sysdate , 'Q') as quarter
+from dual;
+
+-- 18. Calculate age from DOB.
+
+
+
+-- 19. Check if date is weekend.
+SELECT CASE 
+         WHEN TO_CHAR(SYSDATE, 'DY') IN ('SAT', 'SUN') 
+         THEN 'Weekend'
+         ELSE 'Weekday'
+       END AS day_type
+FROM dual;
+
+-- 20. Find next Monday after a given date
+select next_day(date_value, 'monday') as next Monday from dual;
+
+
